@@ -10,8 +10,8 @@ package:
 source:
   fn: seacarb_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/seacarb_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/seacarb/seacarb_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/seacarb_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/seacarb/seacarb_{{ version }}.tar.gz
   sha256: b462a1f8f8e45e4b020c510b5eedb641be45f433842d09a2806504c4fa9c55f8
 
 
