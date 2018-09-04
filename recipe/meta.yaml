@@ -1,4 +1,4 @@
-{% set version = '3.2.6' %}
+{% set version = '3.2.8' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -8,11 +8,10 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: seacarb_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/seacarb_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/seacarb/seacarb_{{ version }}.tar.gz
-  sha256: 0b2b7be699f457a9bd3bcd8dd53b841592962e78cdadd6e004b69ffd6a866680
+  sha256: f790fcdfd3711f5fe6bc44afd884048c4297fd75df61c4c2703b1d2e9f04810a
 
 build:
   merge_build_host: True  # [win]
@@ -26,6 +25,7 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
 
   host:
     - r-base
@@ -66,8 +66,8 @@ extra:
 
 # Package: seacarb
 # Title: Seawater Carbonate Chemistry
-# Version: 3.2.6
-# Date: 2018-02-27
+# Version: 3.2.8
+# Date: 2018-06-25
 # LazyData: true
 # Authors@R: c(person("Jean-Pierre", "Gattuso", role = c("aut", "cre", "cph"), email = "gattuso@obs-vlfr.fr"), person("Jean-Marie", "Epitalon", role = "aut", email = "Jean-Marie.Epitalon@orange.fr"), person("Heloise", "Lavigne", role = "aut", email = "lavigne@obs-vlfr.fr"), person("James", "Orr", role = "aut"), person("Bernard", "Gentili", role = "ctb"), person("Mathilde", "Hagens", role = "ctb"), person("Andreas", "Hofmann", role = "ctb"), person("Aurelien", "Proye", role = "ctb"), person("Karline", "Soetaert", role = "ctb"), person("James", "Rae", role = "ctb") )
 # Depends: R (>= 2.10), oce, gsw
@@ -78,10 +78,10 @@ extra:
 # Repository: CRAN
 # RoxygenNote: 6.0.1
 # NeedsCompilation: no
-# Packaged: 2018-02-27 15:20:04 UTC; gattuso
+# Packaged: 2018-06-26 13:18:18 UTC; gattuso
 # Author: Jean-Pierre Gattuso [aut, cre, cph], Jean-Marie Epitalon [aut], Heloise Lavigne [aut], James Orr [aut], Bernard Gentili [ctb], Mathilde Hagens [ctb], Andreas Hofmann [ctb], Aurelien Proye [ctb], Karline Soetaert [ctb], James Rae [ctb]
 # Maintainer: Jean-Pierre Gattuso <gattuso@obs-vlfr.fr>
-# Date/Publication: 2018-02-27 17:15:39 UTC
+# Date/Publication: 2018-06-26 19:23:00 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
